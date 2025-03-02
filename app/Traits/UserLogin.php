@@ -6,7 +6,6 @@ use App\Models\User;
 use App\Rules\StrongPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Laravel\Sanctum\HasApiTokens;
 
 Trait UserLogin{
     
