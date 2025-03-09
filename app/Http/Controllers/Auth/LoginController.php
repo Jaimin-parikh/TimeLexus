@@ -12,7 +12,10 @@ class LoginController extends Controller
     use UserLogin;
 
     public function logout(Request $request){
-        if(Auth::check())
-            return $this->sendSuccess(SUCCESS, $request->user()->currentAccessToken()->delete(),__("auth.LOGGED_OUT"));
+        if(Auth::check()){
+            $request->user()->currentAccessToken()->delete();
+            // $request->user()->logout();
+            return $this->sendSuccess(SUCCESS,"",__("auth.LOGGED_OUT"));
+        }
     }
 }
